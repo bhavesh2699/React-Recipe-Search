@@ -39,17 +39,20 @@ const App=()=>{
 
 		<div className="App">
 		<form className="search-form" onSubmit={querySubmit}>
+		<h1>Recipe Finder</h1>
 		<input className="search-bar" type="text" value={search} onChange={updateSearch}/>
 		<button className="search-button" type="submit" >search</button>
 		</form>
+		<div className="recipes">
 		{recipes.map(recipe=>(
 			<Recipe 
 			key={recipe.recipe.label}
 			title={recipe.recipe.label} 
 			calories={recipe.recipe.calories} 
-			image={recipe.recipe.image}/>
+			image={recipe.recipe.image}
+			ingredients={recipe.recipe.ingredients}/>
 		))}
-
+        </div>
 
 		</div>
 

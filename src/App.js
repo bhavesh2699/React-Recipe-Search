@@ -4,6 +4,7 @@ import './App.css';
 
 
 
+
 const App=()=>{
 
 	const APP_KEY="7b58dcf7fd0d292afccffd94912fc6fa";
@@ -14,6 +15,7 @@ const App=()=>{
 
 
 	useEffect(()=>{
+		document.title = "Recipe search"
 		getRecipes();			
 	},[query]);
 
@@ -36,10 +38,11 @@ const App=()=>{
 
 
 	return(
-
+        
 		<div className="App">
-		<form className="search-form" onSubmit={querySubmit}>
 		<h1>Recipe Finder</h1>
+		<form className="search-form" onSubmit={querySubmit}>
+		
 		<input className="search-bar" type="text" value={search} onChange={updateSearch}/>
 		<button className="search-button" type="submit" >search</button>
 		</form>
